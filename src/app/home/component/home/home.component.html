@@ -1,30 +1,24 @@
 <div class="body-card">
     <div class="body-clone" data-resume="spaghetti">
 
-        <nav class="menu">
+        <!-- <nav class="menu">
             <div class="menu__link" (click)="handleMenu()">
-                <!-- menu上面圖示 -->
                 <div class="hamburger-menu" [ngClass]="isClickMenu ? 'animate':''"></div>
-                <!-- menu上面字樣 -->
                 <a class="menu__open">M</a>
                 <a class="menu__open">e</a>
                 <a class="menu__open">n</a>
                 <a class="menu__open">u</a>
             </div>
-            <div class="menu__items" [ngClass]="isClickMenu ? '':'ququ2020-none'">
-                <a data-destination="spaghetti"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-spaghetti.png" /><span>Spaghetti</span></a>
-                <a data-destination="penne"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-penne.png" /><span>Penne</span></a>
-                <a data-destination="fusilli"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-fusilli.png" /><span>Fusilli</span></a>
-                <a data-destination="farfalle"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-farfalle.png" /><span>Farfalle</span></a>
-                <a data-destination="ravioli"><img
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-ravioli.png" /><span>Ravioli</span></a>
-            </div>
-        </nav>
+        </nav> -->
+        <div class="homePage_ui-nav001" (click)="handleMenu()">
+            <app-ui-nav001 [isClickMenu]="isClickMenu" [menuChars]="menuChars"></app-ui-nav001>
+        </div>
 
+        <div class="menu__items" [@openClose]="isClickMenu? 'open':'closed'">
+            <div class="card" *ngFor="let card of cardList; index as i" (click)="clickMenuCard(i)">
+                <a class="card_a"><span>{{card}}</span></a>
+            </div>
+        </div>
         <div class="resume-main">
             <div class="resume spaghetti">
                 <img class="resume__background"
@@ -79,11 +73,6 @@
                             Tomato Artichoke Pasta</span>
                     </div>
                 </div>
-                <!-- <figure class="pasta__dish">
-                        <div class="pasta__dish__container">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-dish-spaghetti.png" alt="Spaghetti Bolognese" />
-                        </div>
-                    </figure> -->
             </div>
         </div>
     </div>

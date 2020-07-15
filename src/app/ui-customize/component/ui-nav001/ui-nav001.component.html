@@ -1,7 +1,10 @@
-<div class="ui-nav001">
-    <div class="ui-nav001_hambuger">
-      <a href="#" class="hambuger_btn-block" (click)="handelHambuger()" [ngClass]="isOpen? 'hambuger-close':''">
-        <div class="btn-block_inner-btn"></div>
-      </a>
-    </div>
+<nav class="ui-nav001">
+  <div class="ui-nav001_menu" (click)="handelHambuger()">
+    <!-- menu上面圖示 -->
+    <div class="menu_hamburger" [ngClass]="isClickMenu ? 'active':''"></div>
+    <!-- menu上面字樣 -->
+    <ng-container *ngFor="let char of menuChars; index as i">
+    <a class="menu_char">{{char}}</a>
+  </ng-container>
   </div>
+</nav>

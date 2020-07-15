@@ -1,5 +1,5 @@
 @import "style-import";
-$yellow: #62ffae;
+$yellow: #9ecbd3;
 $nav-width:10%;
 $menu-link-width:40px;
 $menu-link-padding:10px;
@@ -16,7 +16,10 @@ body {
 	height: 100vh;
 }
 
-h1,
+.card_a {
+	// background-color:rosybrown
+}
+
 h2 {
 	font-family: "Baloo 2", cursive;
 }
@@ -29,7 +32,10 @@ a {
 img {
 	width: 100%;
 }
-
+.homePage_ui-nav001{
+	width: 10%;
+	height: 100%;
+}
 .resume-main {
 	display: inline-block;
 	width: calc(100% - #{$nav-width});
@@ -46,12 +52,15 @@ img {
 
 .menu {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	background: #fff;
 	cursor: pointer;
 	width: $nav-width;
 	height: 100vh;
 	min-width: calc(#{$menu-link-width} + (#{$menu-link-padding} * 2));
+	box-shadow: $shadow-style1;
 
 	@media (min-width: 680px) {
 		height: 90vh;
@@ -62,22 +71,22 @@ img {
 		padding: $menu-link-padding;
 		width: $menu-link-width;
 		text-align: center;
-		margin: auto;
+		// margin: auto;
 		position: relative;
 		z-index: 3;
 		height: 100%;
 		justify-content: center;
 		flex-direction: column;
 
-		&__shape {
-			width: 140%;
-			transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-			margin: 0 0 1rem -15%;
+		// &__shape {
+		// 	width: 140%;
+		// 	transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		// 	margin: 0 0 1rem -15%;
 
-			.end-path {
-				visibility: hidden;
-			}
-		}
+		// 	.end-path {
+		// 		visibility: hidden;
+		// 	}
+		// }
 	}
 
 	&__open {
@@ -87,54 +96,55 @@ img {
 		word-break: break-all;
 	}
 
-	&__items {
-		min-width: 100%;
-		z-index: 5;
-		position: absolute;
-		height: 100%;
-		left: 100%;
-		// z-index: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		visibility: visible;
-		width: 19.3rem;
 
-		a {
+}
+
+.menu__items {
+	z-index: 5;
+	position: absolute;
+	height: 100%;
+	left: 10%;
+	// z-index: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	width: calc(100% - 10%);
+
+	.card {
+		height: 100%;
+		width: 100%;
+
+		.card_a {
 			width: 100%;
 			height: 100%;
-			background-size: 200% 100%;
-			background-image: linear-gradient(to right, transparent 50%, #f8f8f8 50%);
+			transform-origin: left;
+			background-color: $color-white;
 			display: flex;
 			position: relative;
 			align-items: center;
 			padding: 1rem;
 			font-size: 1.8rem;
 			letter-spacing: -0.05rem;
-			// overflow: hidden;
-
-			&:nth-child(even) {
-				background-image: linear-gradient(to right, transparent 50%, #f4f4f4 50%);
-			}
 
 			span {
 				opacity: 1;
-				transform: translateX(-20%);
+				// transform: translateX(-20%);
 				position: relative;
 			}
 
 			img {
 				opacity: 1;
-				transform: translateX(20%);
+				// transform: translateX(20%);
 				position: absolute;
 				width: 80%;
 				right: -10%;
 			}
 		}
-	}
 
-	&.active svg.menu__link__shape {
-		transform: rotate(90deg);
+		// &+.card {
+		// 	box-shadow: $shadow-style1;
+		// }
 	}
 }
 
@@ -258,6 +268,7 @@ img {
 }
 
 .body-clone {
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -267,7 +278,6 @@ img {
 	max-height: 100vh;
 	overflow: hidden;
 	width: 100%;
-
 	background-size: cover;
 	background-position: 13rem;
 	background-repeat: no-repeat;
@@ -288,94 +298,4 @@ img {
 	}
 }
 
-[data-resume="spaghetti"] {
-	.spaghetti {
-		visibility: visible;
-	}
-}
 
-[data-resume="penne"] {
-	.penne {
-		visibility: visible;
-	}
-}
-
-[data-resume="fusilli"] {
-	.fusilli {
-		visibility: visible;
-	}
-}
-
-[data-resume="farfalle"] {
-	.farfalle {
-		visibility: visible;
-	}
-}
-
-[data-resume="ravioli"] {
-	.ravioli {
-		visibility: visible;
-	}
-}
-
-$bar-width: 100%;
-$bar-width-ani:80%;
-$bar-height: 3px;
-$bar-spacing: 10px;
-
-.hamburger-menu,
-.hamburger-menu:after,
-.hamburger-menu:before {
-	width: $bar-width;
-	height: $bar-height;
-}
-
-.hamburger-menu {
-	max-width: 40px;
-	position: relative;
-	transform: translateY($bar-spacing);
-	background: rgb(0, 0, 0);
-	transition: all 0ms 300ms;
-	margin-bottom: 50px;
-
-	&.animate {
-
-		background: rgba(0, 0, 0, 1);
-	}
-}
-
-.hamburger-menu:before,
-.hamburger-menu:after {
-	content: "";
-	position: absolute;
-	left: 0;
-	right: auto;
-	background: rgba(0, 0, 0, 1);
-	transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.hamburger-menu:before {
-	bottom: $bar-spacing;
-}
-
-.hamburger-menu:after {
-	top: $bar-spacing;
-}
-
-.hamburger-menu.animate:after {
-	width: $bar-width-ani;
-	top: 7px;
-	// left: auto;
-	// right: 0;
-	transform: rotate(45deg);
-	transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.hamburger-menu.animate:before {
-	width: $bar-width-ani;
-	// left: auto;
-	// right: 0;
-	bottom: 7px;
-	transform: rotate(-45deg);
-	transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-}
