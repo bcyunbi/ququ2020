@@ -3,39 +3,91 @@ $yellow: #9ecbd3;
 $nav-width:10%;
 $menu-link-width:40px;
 $menu-link-padding:10px;
-
 // * {
 // 	box-sizing: border-box;
 // }
 
 body {
-	font-family: "Gotu", sans-serif;
+	// font-family: "Gotu", sans-serif;
 	background: $yellow;
 	// display: grid;
-	place-items: center;
 	height: 100vh;
+	place-items: center;
+	overflow: hidden;
 }
 
-.card_a {
-	// background-color:rosybrown
-}
-
-h2 {
-	font-family: "Baloo 2", cursive;
-}
-
-a {
-	cursor: pointer;
-	color: #222;
-}
-
-img {
+.homePage {
 	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&_card {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		// max-width: 60rem;
+		background: $yellow;
+		// max-height: 100vh;
+		width: 100%;
+		height: 100vh;
+		background-size: cover;
+		background-position: 13rem;
+		background-repeat: no-repeat;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg transform='translate(300,300)'%3E%3Cpath d='M171.3,-205.3C215.2,-167.2,239.6,-106.9,247.9,-45.8C256.2,15.3,248.5,77.2,216.3,117.5C184.2,157.8,127.7,176.6,70.6,200.1C13.5,223.6,-44.2,251.8,-80.6,233.4C-117,215,-132.1,150,-124.8,101.6C-117.5,53.3,-87.8,21.5,-74.8,-6.5C-61.9,-34.4,-65.6,-58.6,-56,-102.7C-46.3,-146.8,-23.1,-210.9,20.2,-235C63.6,-259.2,127.3,-243.3,171.3,-205.3Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E");
+
+		@media (min-width: $screen-pad) {
+			height: 90vh;
+			width: 95%;
+			box-shadow: 0 10px 55px rgba(0, 0, 0, 0.15);
+			border-radius: 2rem;
+			background-position: 20rem;
+		}
+
+		&[data-resume="ravioli"] {
+			.menu.active svg.menu__link__shape {
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
-.homePage_ui-nav001{
-	width: 10%;
+
+
+// h2 {
+// 	font-family: "Baloo 2", cursive;
+// }
+
+.card_menu {
+	width: 100%;
 	height: 100%;
+	position: absolute;
+	display: flex;
+
+	.menu_ui-nav001 {
+		width: $nav-width;
+		height: 100%;
+		z-index: 98;
+	}
+
+	.menu_ui-nav-list001 {
+		height: 100%;
+		width: calc(100% - #{$nav-width});
+		position: absolute;
+		left: $nav-width;
+		transition: 1s cubic-bezier(0.29, 0.37, 0.32, 1.275);
+		z-index: 97;
+
+		&--none {
+			z-index: 0;
+		}
+	}
 }
+
+
 .resume-main {
 	display: inline-block;
 	width: calc(100% - #{$nav-width});
@@ -43,6 +95,7 @@ img {
 	position: relative;
 	overflow-y: auto;
 	overflow-x: hidden;
+	margin-left:#{$nav-width};
 
 	// @media (min-width: 680px) {
 	// 	min-height: 100vh;
@@ -50,103 +103,8 @@ img {
 	// }
 }
 
-.menu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	background: #fff;
-	cursor: pointer;
-	width: $nav-width;
-	height: 100vh;
-	min-width: calc(#{$menu-link-width} + (#{$menu-link-padding} * 2));
-	box-shadow: $shadow-style1;
-
-	@media (min-width: 680px) {
-		height: 90vh;
-	}
-
-	&__link {
-		display: flex;
-		padding: $menu-link-padding;
-		width: $menu-link-width;
-		text-align: center;
-		// margin: auto;
-		position: relative;
-		z-index: 3;
-		height: 100%;
-		justify-content: center;
-		flex-direction: column;
-
-		// &__shape {
-		// 	width: 140%;
-		// 	transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-		// 	margin: 0 0 1rem -15%;
-
-		// 	.end-path {
-		// 		visibility: hidden;
-		// 	}
-		// }
-	}
-
-	&__open {
-		font-size: 1.5rem;
-		line-height: 1.1;
-		text-transform: uppercase;
-		word-break: break-all;
-	}
 
 
-}
-
-.menu__items {
-	z-index: 5;
-	position: absolute;
-	height: 100%;
-	left: 10%;
-	// z-index: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: flex-start;
-	width: calc(100% - 10%);
-
-	.card {
-		height: 100%;
-		width: 100%;
-
-		.card_a {
-			width: 100%;
-			height: 100%;
-			transform-origin: left;
-			background-color: $color-white;
-			display: flex;
-			position: relative;
-			align-items: center;
-			padding: 1rem;
-			font-size: 1.8rem;
-			letter-spacing: -0.05rem;
-
-			span {
-				opacity: 1;
-				// transform: translateX(-20%);
-				position: relative;
-			}
-
-			img {
-				opacity: 1;
-				// transform: translateX(20%);
-				position: absolute;
-				width: 80%;
-				right: -10%;
-			}
-		}
-
-		// &+.card {
-		// 	box-shadow: $shadow-style1;
-		// }
-	}
-}
 
 .resume {
 	position: absolute;
@@ -257,45 +215,3 @@ img {
 		transform: rotate(20deg);
 	}
 }
-
-.body-card {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.body-clone {
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	max-width: 60rem;
-	background: $yellow;
-	max-height: 100vh;
-	overflow: hidden;
-	width: 100%;
-	background-size: cover;
-	background-position: 13rem;
-	background-repeat: no-repeat;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg transform='translate(300,300)'%3E%3Cpath d='M171.3,-205.3C215.2,-167.2,239.6,-106.9,247.9,-45.8C256.2,15.3,248.5,77.2,216.3,117.5C184.2,157.8,127.7,176.6,70.6,200.1C13.5,223.6,-44.2,251.8,-80.6,233.4C-117,215,-132.1,150,-124.8,101.6C-117.5,53.3,-87.8,21.5,-74.8,-6.5C-61.9,-34.4,-65.6,-58.6,-56,-102.7C-46.3,-146.8,-23.1,-210.9,20.2,-235C63.6,-259.2,127.3,-243.3,171.3,-205.3Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E");
-
-	@media (min-width: 680px) {
-		height: 90vh;
-		width: 95%;
-		box-shadow: 0 10px 55px rgba(0, 0, 0, 0.15);
-		border-radius: 2rem;
-		background-position: 20rem;
-	}
-
-	&[data-resume="ravioli"] {
-		.menu.active svg.menu__link__shape {
-			transform: rotate(45deg);
-		}
-	}
-}
-
-

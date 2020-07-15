@@ -55,9 +55,6 @@ skh-page-content {
     background-color: $content-block-bg;
   }
 
-  .layout-card-bg02 {
-    background-color: $color-grey-06;
-  }
 
   .layout-content-padding01 {
     padding-top: 30px;
@@ -385,7 +382,7 @@ skh-page-content {
 // style_scrollbar
 .style_scrollbar_001 {
   width: 6px;
-  background-color: $color-grey-10;
+  background-color: $color-grey-03;
   height: 6px;
 }
 
@@ -410,12 +407,12 @@ body *::-webkit-scrollbar-thumb {
 }
 
 body {
-  scrollbar-arrow-color: $color-grey-10;
+  scrollbar-arrow-color: $color-grey-03;
   scrollbar-face-color: $color-grey-02;
   scrollbar-3dlight-color: transparent;
-  scrollbar-highlight-color: $color-grey-10;
+  scrollbar-highlight-color: $color-grey-03;
   scrollbar-shadow-color: transparent;
   scrollbar-darkshadow-color: transparent;
-  scrollbar-track-color: $color-grey-10;
+  scrollbar-track-color: $color-grey-03;
   scrollbar-base-color: $color-grey-02;
 }

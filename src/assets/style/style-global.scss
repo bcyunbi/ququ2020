@@ -5,10 +5,12 @@
 body {
   font-family: $font-family;
   -webkit-overflow-scrolling: touch;
+
   &.style--fix {
     position: fixed;
     overflow: hidden;
   }
+
   img {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -18,5 +20,9 @@ body {
     -webkit-user-drag: none;
     // user-drag: none;
     -webkit-touch-callout: none;
+  }
+
+  a {
+    cursor: pointer;
   }
 }

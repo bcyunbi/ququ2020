@@ -1,39 +1,29 @@
-<div class="body-card">
-    <div class="body-clone" data-resume="spaghetti">
+<div class="homePage">
+    <div class="homePage_card" data-resume="spaghetti">
 
-        <!-- <nav class="menu">
-            <div class="menu__link" (click)="handleMenu()">
-                <div class="hamburger-menu" [ngClass]="isClickMenu ? 'animate':''"></div>
-                <a class="menu__open">M</a>
-                <a class="menu__open">e</a>
-                <a class="menu__open">n</a>
-                <a class="menu__open">u</a>
+        <div class="card_menu">
+            <div class="menu_ui-nav001" (click)="handleMenu()">
+                <app-ui-nav001 [isClickMenu]="isClickMenu" [menuChars]="menuChars"></app-ui-nav001>
             </div>
-        </nav> -->
-        <div class="homePage_ui-nav001" (click)="handleMenu()">
-            <app-ui-nav001 [isClickMenu]="isClickMenu" [menuChars]="menuChars"></app-ui-nav001>
-        </div>
-
-        <div class="menu__items" [@openClose]="isClickMenu? 'open':'closed'">
-            <div class="card" *ngFor="let card of cardList; index as i" (click)="clickMenuCard(i)">
-                <a class="card_a"><span>{{card}}</span></a>
+    <!--  [style.z-index]="isClickMenu ? '99':'0'" -->
+            <div class="menu_ui-nav-list001" [ngClass]="isClickMenu ? '':'menu_ui-nav-list001--none'" >
+                <app-ui-nav-list001 [isClickMenu]="isClickMenu" [menuList]="menuList"></app-ui-nav-list001>
             </div>
         </div>
+        
         <div class="resume-main">
             <div class="resume spaghetti">
                 <img class="resume__background"
                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-spaghetti.png" />
                 <div class="resume__info">
-                    <small>Recipes for</small>
-                    <h2 data-splitting>Spaghetti</h2>
+                    <small>Angular 開發</small>
+                    <h2>保險業業務員系統</h2>
 
                     <div class="resume__info__recipes">
-                        <a target="_blank" href="https://www.bonappetit.com/recipe/bas-best-bolognese"><span>BA's Best
-                                Bolognese</span></a>
-                        <a target="_blank" href="https://www.bonappetit.com/recipe/white-pesto-pasta"><span>White Pesto
-                                Pasta</span></a>
-                        <a target="_blank" href="https://www.bonappetit.com/recipe/shrimp-scampi-pasta"><span>Shrimp
-                                Scampi</span></a>
+                        <a target="_blank" href="https://www.bonappetit.com/recipe/bas-best-bolognese"><span>
+                                以 Angular + Cordova 開發成web APP </span></a>
+                        <a target="_blank" href="https://www.bonappetit.com/recipe/white-pesto-pasta"><span>
+                                此專案有六國版本，由核心core＋各國客製化版本</span></a>
                         <span>Zesty
                             Tomato Artichoke PastaZesty
                             Tomato Artichoke PastaZesty

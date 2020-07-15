@@ -54,8 +54,8 @@ export class HomeComponent implements OnInit {
       "img": "assets/img/img04.jpg"
     }
   ];
-  public cardList = [
-    '簡歷', '保險業業務員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集'
+  public menuList = [
+    '簡歷保險業業務員系統保險業業務員系統保險業業務員系統保險業業務員系統保險業業務員系統保險業業務員系統', '保險業業務員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集'
   ]
   ngOnInit() {
 
