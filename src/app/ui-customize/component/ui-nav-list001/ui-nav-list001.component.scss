@@ -5,15 +5,19 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: flex-start;
+    overflow: auto;
+
+    // &.active {
+    //         background-color: $color-white;
+    // }
 
     &_card {
         height: 100%;
-        display: flex;
         width: 100%;
-        transition: all 1s ease-in-out;
-
+        max-height: 50px;
+        // border-top: 1px solid $color-grey-01;
 
         .card_content {
             width: 100%;
@@ -23,19 +27,16 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            // padding: 1rem;
-            // font-size: 1.8rem;
-            // letter-spacing: -0.05rem;
+            // opacity: 0; //動畫效果
 
             .content_title {
-                opacity: 1;
+                width: 100%;
+                height: 100%;
+                // opacity: 1;
                 @extend .word-limit-lineType;
                 -webkit-line-clamp: 1;
+                border-top: 1px solid $color-grey-01;
             }
-        }
-
-        &+.ui-nav-list001_card.active {
-            border-top: 1px solid $color-grey-01;
         }
     }
 }

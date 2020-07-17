@@ -8,6 +8,13 @@
   @mixin word-limit-max-width($font-size, $word-num) {
     max-width:calc(#{$font-size} * #{$word-num});
   }
+
+  @mixin transitionfix() {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0)
+}
   
   
 //   @mixin word-limit-line($line-num) {

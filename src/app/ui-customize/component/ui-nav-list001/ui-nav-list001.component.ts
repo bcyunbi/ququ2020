@@ -7,32 +7,37 @@ import { trigger, query, style, animate, transition, stagger, keyframes, group, 
   styleUrls: ['./ui-nav-list001.component.scss'], encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('openClose', [
+      // state('*', style({
+      //   opacity: 0,
+      //   visibility: 'hidden',
+      // })),
       state('open', style({
-        // visibility: 'visible',
-        display: 'flex',
-        transform: '*'
+        visibility: 'visible',
+        transform: '*',
+        background: 'white'
       })),
       state('closed', style({
-        // visibility: 'hidden',
+        visibility: 'hidden',
         transform: '*',
-        display: 'none',
+        // background: 'transparent'
       })),
       transition('open => closed', [
         group([query('.card_content', stagger('.1s', [
-          animate('1s cubic-bezier(0.29, 0.37, 0.32, 1.275)', keyframes([
-            style({ opacity: 1, offset: 0 }),
-            style({ opacity: .5, offset: 0.3 }),
-            style({ opacity: 0, offset: 1 }),
+          animate('.3s linear', keyframes([
+            style({ opacity: 1 }),
+            style({ opacity: .5 }),
+            style({ opacity: 0 }),
           ]))])),
         ]),
       ]),
       transition('closed => open', [
-        style({   display: 'flex', }),
+        style({ visibility: 'visible', opacity: 1 ,background: 'white' }),
+        query('.card_content', style({ opacity: 0 })),
         group([query('.card_content', stagger('.1s', [
-          animate('1s cubic-bezier(0.29, 0.37, 0.32, 1.275)', keyframes([
-            style({ opacity: 0, offset: 0 }),
-            style({ opacity: .5, transform: 'translateY(30px) scaleX(1)', offset: 0.3 }),
-            style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+          animate('.3s linear', keyframes([
+            style({ opacity: 0 }),
+            style({ opacity: .5, transform: 'translate3d(0,10px,0)' }),
+            style({ opacity: 1, transform: 'translate3d(0,0,0)' }),
           ]))])),
         ]),
       ])])]

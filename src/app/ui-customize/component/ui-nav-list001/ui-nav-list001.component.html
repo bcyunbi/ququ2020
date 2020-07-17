@@ -1,8 +1,7 @@
 <div class="ui-nav-list001" [@openClose]="isClickMenu? 'open':'closed'">
-    <div class="ui-nav-list001_card" *ngFor="let menuText of menuList; index as i" (click)="clickMenuCard(i)"
-        [ngClass]="isClickMenu ? 'active':' '">
+    <div class="ui-nav-list001_card" *ngFor="let menuText of menuList; index as i" (click)="clickMenuCard(i)">
         <div class="card_content">
-            <div class="content_title">{{menuText}}</div>
+            <div class="content_title" >{{menuText}}</div>
         </div>
     </div>
 </div>
