@@ -1,0 +1,16 @@
+.ui-content-project001 {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    &_point-block {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    &_text-block {
+        display: inline-block;
+        width: 100%;
+    }
+}

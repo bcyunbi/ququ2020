@@ -5,163 +5,135 @@
             <div class="menu_ui-nav001" (click)="handleMenu()">
                 <app-ui-nav001 [isClickMenu]="isClickMenu" [menuChars]="menuChars"></app-ui-nav001>
             </div>
-    <!--  [style.z-index]="isClickMenu ? '99':'0'" -->
-            <div class="menu_ui-nav-list001" [ngClass]="isClickMenu ? '':'menu_ui-nav-list001--none'" >
-                <app-ui-nav-list001 [isClickMenu]="isClickMenu" [menuList]="menuList"></app-ui-nav-list001>
+            <div class="menu_ui-nav-list001" [ngClass]="isClickMenu ? '':'menu_ui-nav-list001--none'">
+                <app-ui-nav-list001 [isClickMenu]="isClickMenu" [menuList]="menuList"
+                    (clickMenuPage)="clickMenuCard($event)"></app-ui-nav-list001>
             </div>
         </div>
-        
-        <div class="resume-main">
-            <div class="resume spaghetti">
-                <!-- <img class="resume__background"
-                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-spaghetti.png" /> -->
-                <div class="resume__info">
-                    <small>Angular 開發</small>
-                    <h2>保險業業務員系統</h2>
 
-                    <div class="resume__info__recipes">
-                        <a target="_blank" href="https://www.bonappetit.com/recipe/bas-best-bolognese"><span>
-                                以 Angular + Cordova 開發成web APP </span></a>
-                        <a target="_blank" href="https://www.bonappetit.com/recipe/white-pesto-pasta"><span>
-                                此專案有六國版本，由核心core＋各國客製化版本</span></a>
-                        <span>Zesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke PastaZesty
-                            Tomato Artichoke Pasta</span>
+        <div class="card_resume">
+            <!-- <img class="resume__background"
+                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-spaghetti.png" /> -->
+            <ng-container *ngIf="currentPage == 0">
+                <div class="resume_info">
+                    <div class="info_title">
+                        <app-ui-title001 [mainTitle]="menuList[0]" [subTitle]="'About me'"></app-ui-title001>
+                    </div>
+                    <div class="info_content">
+                        <app-ui-content-project001>
+                            <ng-container TextType='pointBlock'>
+                                <ul class="layout-list-disc001">
+                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
+                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
+                                </ul>
+                            </ng-container>
+                            <ng-container TextType='infoBlock'>
+                                <span>
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke Pasta</span>
+                            </ng-container>
+                        </app-ui-content-project001>
                     </div>
                 </div>
-            </div>
+            </ng-container>
+            <ng-container *ngIf="currentPage == 1">
+                <div class="resume_info">
+                    <div class="info_title">
+                        <app-ui-title001 [mainTitle]="menuList[1]" [subTitle]="'Angular 開發'"></app-ui-title001>
+                    </div>
+                    <div class="info_content">
+                        <app-ui-content-project001>
+                            <ng-container TextType='pointBlock'>
+                                <ul class="layout-list-disc001">
+                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
+                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
+                                </ul>
+                            </ng-container>
+                            <ng-container TextType='infoBlock'>
+                                <span>
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke Pasta</span>
+                            </ng-container>
+                        </app-ui-content-project001>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="currentPage == 2">
+                <div class="resume_info">
+                    <div class="info_title">
+                        <app-ui-title001 [mainTitle]="menuList[2]" [subTitle]="'Angular 開發'"></app-ui-title001>
+                    </div>
+                    <div class="info_content">
+                        <app-ui-content-project001>
+                            <ng-container TextType='pointBlock'>
+                                <ul class="layout-list-disc001">
+                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
+                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
+                                </ul>
+                            </ng-container>
+                            <ng-container TextType='infoBlock'>
+                                <span>
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke Pasta</span>
+                            </ng-container>
+                        </app-ui-content-project001>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="currentPage == 3">
+                <div class="resume_info">
+                    <div class="info_title">
+                        <app-ui-title001 [mainTitle]="menuList[3]" [subTitle]="'Angular 開發'"></app-ui-title001>
+                    </div>
+                    <div class="info_content">
+                        <app-ui-content-project001>
+                            <ng-container TextType='pointBlock'>
+                                <ul class="layout-list-disc001">
+                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
+                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
+                                </ul>
+                            </ng-container>
+                            <ng-container TextType='infoBlock'>
+                                <span>
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke Pasta</span>
+                            </ng-container>
+                        </app-ui-content-project001>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="currentPage == 4">
+                <div class="resume_info">
+                    <div class="info_title">
+                        <app-ui-title001 [mainTitle]="menuList[4]" [subTitle]="'Angular 開發'"></app-ui-title001>
+                    </div>
+                    <div class="info_content">
+                        <app-ui-content-project001>
+                            <ng-container TextType='pointBlock'>
+                                <ul class="layout-list-disc001">
+                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
+                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
+                                </ul>
+                            </ng-container>
+                            <ng-container TextType='infoBlock'>
+                                <span>
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke PastaZesty
+                                    Tomato Artichoke Pasta</span>
+                            </ng-container>
+                        </app-ui-content-project001>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
-
-<!-- <div class="pasta penne">
-    <img class="pasta__background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-penne.png" />
-    <div class="pasta__info">
-        <small>Recipes for</small>
-        <h2 data-splitting>Penne</h2>
-
-        <div class="pasta__info__recipes">
-            <a target="_blank" href="https://www.saltandlavender.com/easy-pasta-arrabiata-recipe/"><span>Penne
-                    Arrabiata</span></a>
-            <a target="_blank" href="https://www.forkintheroad.co/simple-lemon-arugula-spicy-penne/"><span>Simple Lemon
-                    Arugula
-                    Spicy Penne
-                </span></a>
-            <a target="_blank" href="https://www.honeyandbirch.com/penne-aglio-e-olio/"><span>Penne Aglio e
-                    Olio</span></a>
-        </div>
-    </div>
-    
-        <figure class="pasta__dish">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-dish-penne.png" alt="Spaghetti Bolognese" />
-        </figure>
-
-</div> -->
-
-<!-- <div class="pasta fusilli">
-    <img class="pasta__background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-fusilli.png" />
-    <div class="pasta__info">
-        <small>Recipes for</small>
-        <h2 data-splitting>Fusilli</h2>
-
-        <div class="pasta__info__recipes">
-            <a target="_blank" href="https://www.forkintheroad.co/vegan-fusilli-pasta-salad/"><span>Vegan
-                    Fusilli Pasta Salad</span></a>
-            <a target="_blank"
-                href="https://goodyfoodies.blogspot.com/2012/06/recipe-fusilli-pasta-carbonara-italian.html"><span>Fusilli
-                    Carbonara</span></a>
-            <a target="_blank" href="https://cookidoo.co.uk/recipes/recipe/en-GB/r247597"><span>Pasta alla
-                    Genovese</span></a>
-        </div>
-    </div>
-
-<figure class="pasta__dish">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-dish-fusilli.png" alt="Fusilli Pasta Salad" />
-        </figure> 
-
-</div>
-
-<div class="pasta farfalle">
-    <img class="pasta__background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-farfalle.png" />
-    <div class="pasta__info">
-        <small>Recipes for</small>
-        <h2 data-splitting>Farfalle</h2>
-
-        <div class="pasta__info__recipes">
-            <a target="_blank"
-                href="https://www.budgetbytes.com/mushroom-and-spinach-pasta-with-ricotta/"><span>Mushroom &
-                    Spinash Pasta with Ricotta</span></a>
-            <a target="_blank" href="https://www.budgetbytes.com/spicy-sausage-broccoli-pasta/"><span>Spicy
-                    Saucy and Broccoli Pasta</span></a>
-            <a target="_blank" href="https://www.budgetbytes.com/zesty-tomato-artichoke-pasta/"><span>Zesty
-                    Tomato Artichoke Pasta</span></a>
-        </div>
-    </div>
-
-    <figure class="pasta__dish">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-dish-farfalle.png"
-            alt="Fusilli Pasta Salad" />
-    </figure>
-
-</div> -->
-
-<!-- <div class="pasta ravioli">
-    <img class="pasta__background"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-ravioli.png" />
-    <div class="pasta__info">
-
-        <small>Recipes for</small>
-        <h2 data-splitting>Ravioli</h2>
-
-        <div class="pasta__info__recipes">
-            <a target="_blank"
-                href="https://www.goodhousekeeping.com/food-recipes/easy/g739/ravioli-recipes/?slide=2/"><span>Ravioli
-                    with Brown Butter and Spinash</span></a>
-            <a target="_blank"
-                href="https://www.goodhousekeeping.com/food-recipes/a3382/ravioli-zucchini-lasagna/"><span>Ravioli
-                    and Zucchini Lasagna</span></a>
-            <a target="_blank"
-                href="http://www.garnishandglaze.com/2016/06/17/toasted-ravioli-recipe/"><span>Toasted
-                    Ravioli</span></a>
-        </div>
-    </div>
-
-    <figure class="pasta__dish">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-dish-ravioli.png"
-            alt="Fusilli Pasta Salad" />
-    </figure>
-</div> -->

@@ -9,23 +9,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class HomeComponent implements OnInit {
   public isClickMenu: boolean = false;
   constructor() { }
-  public menuChars=['M','e','n','u']
-  public bannerList = [
-    {
-      "img": "assets/img/img01.jpg"
-    },
-    {
-      "img": "assets/img/img02.jpg"
-    },
-    {
-      "img": "assets/img/img03.jpg"
-    },
-    {
-      "img": "assets/img/img04.jpg"
-    }
-  ];
+  public menuChars = ['M', 'e', 'n', 'u']
   public menuList = [
-    '簡歷保險業業務員系統保險業業務員系統保險業業務員系統保險業業務員系統保險業業務員系統保險業業務員系統', '保險業業務員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集', '大學線上作品集', '大學線上作品集'
+    '簡歷', '保險業業務員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集'
   ]
   ngOnInit() {
 
@@ -36,7 +22,8 @@ export class HomeComponent implements OnInit {
   public currentPage: number = 0;
   clickMenuCard(index) {
     this.currentPage = index;
-    console.log("hiiiiiii", this.currentPage)
+    console.log("home say:", this.currentPage)
+    this.isClickMenu = false;
   }
   // onAnimationEvent(event: AnimationEvent) {
   //   console.log({ event.toState });
