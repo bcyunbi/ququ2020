@@ -93,9 +93,21 @@ body {
 			margin-left:#{$nav-width};
 
 			.resume_info {
+				padding-bottom: 100px;
+
 				.info_title {}
 
-				.info_content {}
+				.info_content {
+					width: 100%;
+					height: 100%;
+
+					&_web-info {
+						width: 50%;
+						display: inline-block;
+						padding: 30px;
+
+					}
+				}
 
 			}
 		}
@@ -110,13 +122,6 @@ body {
 			width: 100%;
 			font-size: 1.4rem;
 			height: 100vh;
-
-
-			// @media (min-width: 680px) {
-			// 	// width: ;
-			// 	// grid-template-columns: 1fr 33rem;
-
-			// }
 
 			h2 {
 				font: 3rem / 1.2 "Gotu", sans-serif;

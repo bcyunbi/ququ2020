@@ -20,21 +20,32 @@
                         <app-ui-title001 [mainTitle]="menuList[0]" [subTitle]="'About me'"></app-ui-title001>
                     </div>
                     <div class="info_content">
-                        <app-ui-content-project001>
-                            <ng-container TextType='pointBlock'>
-                                <ul class="layout-list-disc001">
-                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
-                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
-                                </ul>
-                            </ng-container>
-                            <ng-container TextType='infoBlock'>
-                                <span>
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke Pasta</span>
-                            </ng-container>
-                        </app-ui-content-project001>
+                        <div class="">
+                            Hi, 我是曲蕓
+                        </div>
+                        <ul class="layout-list-disc001">
+                            <p>經歷：</p>
+                            <li class="layout-list-disc001_child">元智資傳環控物連網計畫、《基於圖形識別之低成本快速整理紙筆測驗批改方法》論文</li>
+                            <li class="layout-list-disc001_child"> 臺師大「英語線上學習平臺建置開發及課程推廣計畫」－研發人員| 2017.05-2018.04</li>
+                            <li class="layout-list-disc001_child">La Vida Tec. 吉樂健康資訊科技有限公司－前端實習生 | 2018.04-2019.03</li>
+                            <li class="layout-list-disc001_child">新逸資訊科技有限公司－前台工程師 | 2019.07-2020.03</li>
+                            <p>技術：</p>
+                            <li class="layout-list-disc001_child">框架開發：Angular、React</li>
+                            <li class="layout-list-disc001_child"> Css 預處理器：Scss、Less</li>
+                            <li class="layout-list-disc001_child"> UI / UX：Adobe XD、PS、AI</li>
+                            <li class="layout-list-disc001_child"> jQuery、Html5、bootstrap</li>
+                            <li class="layout-list-disc001_child">其他：Unity C#、3Ds Max</li>
+                            <li class="layout-list-disc001_child">TOEIC：745</li>
+                            <p>學歷：</p>
+                            <li class="layout-list-disc001_child">Yuan Ze University Information Communication |
+                                2015-2019</li>
+                            <li class="layout-list-disc001_child"> UAL:LCC-Short Course: Game Design | 2017.07-08</li>
+                            <p>聯絡：</p>
+                            <li class="layout-list-disc001_child"><a href="https://www.facebook.com/qu.yunbi"
+                                    target="_blank" rel="noreferrer noopener">Facebook</a></li>
+                            <li class="layout-list-disc001_child"> <a href="https://github.com/bcyunbi" target="_blank"
+                                    rel="noreferrer noopener">Github</a></li>
+                        </ul>
                     </div>
                 </div>
             </ng-container>
@@ -52,11 +63,17 @@
                                 </ul>
                             </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <span>
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke Pasta</span>
+                                <ul class="layout-list-disc001">
+                                    此專案有多國版本，各國版本包含：
+                                    <li class="layout-list-disc001_child">國際版（ENG) <span>此為核心core版本</span></li>
+                                    <li class="layout-list-disc001_child"> 台灣(MDO)</li>
+                                    <li class="layout-list-disc001_child"> 斯里蘭卡(LKA)</li>
+                                    <li class="layout-list-disc001_child"> 菲律賓(PH)</li>
+                                    <li class="layout-list-disc001_child"> 印尼(IN)</li>
+                                    <li class="layout-list-disc001_child">泰國(TH)</li>
+                                </ul>
+                                <span>主要負責的項目：1.台灣版的開發與客製化元件 2.核心core元件第二階段開發</span>
+
                             </ng-container>
                         </app-ui-content-project001>
                     </div>
@@ -89,7 +106,7 @@
             <ng-container *ngIf="currentPage == 3">
                 <div class="resume_info">
                     <div class="info_title">
-                        <app-ui-title001 [mainTitle]="menuList[3]" [subTitle]="'Angular 開發'"></app-ui-title001>
+                        <app-ui-title001 [mainTitle]="menuList[3]" [subTitle]="'傳統切版 Html5 & jQuery'"></app-ui-title001>
                     </div>
                     <div class="info_content">
                         <app-ui-content-project001>
@@ -100,11 +117,13 @@
                                 </ul>
                             </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <span>
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke Pasta</span>
+                                <ng-container *ngFor="let item of infoList; i as index">
+                                    <div class="info_content_web-info">
+                                        <app-ui-content-info001 [imgSrc]="item.imgSrc" [webSrc]="item.webSrc"
+                                        [textTitle]="item.textTitle" [textInfo]="item.textInfo">
+                                    </app-ui-content-info001>
+                                    </div>
+                                </ng-container>
                             </ng-container>
                         </app-ui-content-project001>
                     </div>
@@ -113,22 +132,22 @@
             <ng-container *ngIf="currentPage == 4">
                 <div class="resume_info">
                     <div class="info_title">
-                        <app-ui-title001 [mainTitle]="menuList[4]" [subTitle]="'Angular 開發'"></app-ui-title001>
+                        <app-ui-title001 [mainTitle]="menuList[4]" [subTitle]="'電子書'"></app-ui-title001>
                     </div>
                     <div class="info_content">
                         <app-ui-content-project001>
                             <ng-container TextType='pointBlock'>
-                                <ul class="layout-list-disc001">
-                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
-                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
-                                </ul>
+
                             </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <span>
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke Pasta</span>
+                                <iframe
+                                    src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=f7csr8ljd&bgcolor=transparent&t=1540204623&play=1"
+                                    width="100%" height="400" seamless="seamless" scrolling="no" frameBorder="0"
+                                    transparentBackground="true" allowFullScreen="false"></iframe>
+                                <iframe
+                                    src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=fx9fo5fnv&bgcolor=EEEEEE&t=1540204623&play=1"
+                                    width="100%" height="400" seamless="seamless" scrolling="no" frameBorder="0"
+                                    transparentBackground="true" allowFullScreen="false"></iframe>
                             </ng-container>
                         </app-ui-content-project001>
                     </div>

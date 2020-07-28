@@ -13,6 +13,7 @@ import { UiSlider001Component } from './component/ui-slider001/ui-slider001.comp
 import { UiNavList001Component } from './component/ui-nav-list001/ui-nav-list001.component';
 import { UiContentProject001Component } from './component/ui-content-project001/ui-content-project001.component';
 import { UiTitle001Component } from './component/ui-title001/ui-title001.component';
+import { UiContentInfo001Component } from './component/ui-content-info001/ui-content-info001.component';
 
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
@@ -22,12 +23,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 @NgModule({
-  declarations: [UiFooter001Component, UiMap001Component, UiHeader001Component, UiNav001Component, UiSlider001Component, UiNavList001Component, UiContentProject001Component, UiTitle001Component],
+  declarations: [UiFooter001Component, UiMap001Component, UiHeader001Component, UiNav001Component, UiSlider001Component, UiNavList001Component, UiContentProject001Component, UiTitle001Component, UiContentInfo001Component],
   imports: [
     CommonModule,
     SwiperModule
   ],
-  exports: [UiFooter001Component, UiMap001Component, UiHeader001Component, UiNav001Component, UiSlider001Component, UiNavList001Component, UiContentProject001Component, UiTitle001Component],
+  exports:  [UiFooter001Component, UiMap001Component, UiHeader001Component, UiNav001Component, UiSlider001Component, UiNavList001Component, UiContentProject001Component, UiTitle001Component, UiContentInfo001Component],
   providers: [
     {
       provide: SWIPER_CONFIG,
