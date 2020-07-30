@@ -16,6 +16,7 @@ import { UiTitle001Component } from './component/ui-title001/ui-title001.compone
 import { UiContentInfo001Component } from './component/ui-content-info001/ui-content-info001.component';
 
 
+
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 'auto',

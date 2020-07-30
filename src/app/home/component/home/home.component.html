@@ -20,6 +20,7 @@
                         <app-ui-title001 [mainTitle]="menuList[0]" [subTitle]="'About me'"></app-ui-title001>
                     </div>
                     <div class="info_content">
+
                         <div class="">
                             Hi, 我是曲蕓
                         </div>
@@ -74,6 +75,33 @@
                                 </ul>
                                 <span>主要負責的項目：1.台灣版的開發與客製化元件 2.核心core元件第二階段開發</span>
 
+                                <div class="content_ui-slider001"  *ngIf="tableImg">
+                                    <img class="ui-slider001_device" src="assets/img/table.png">
+                                    <div class="ui-slider001_img">
+                                        <app-ui-slider001>
+                                            <div class="swiper-slide" *ngFor="let item of tableImg | async; let i = index">
+                                                    <div class="slider-inner ">
+                                                        <img src="{{item.img}}">
+                                                    </div>
+                                            </div>
+                                        </app-ui-slider001>
+                                    </div>
+                                </div>
+
+                                <div class="content_ui-slider001"  *ngIf="mobileImg">
+                                    <img class="ui-slider001_device" src="assets/img/mobile.png">
+                                    <div class="ui-slider001_img">
+                                        <app-ui-slider001>
+                                            <div class="swiper-slide" *ngFor="let item of mobileImg | async; let i = index">
+                                                    <div class="slider-inner ">
+                                                        <img src="{{item.img}}">
+                                                    </div>
+                                            </div>
+                                        </app-ui-slider001>
+                                    </div>
+
+                                </div>
+
                             </ng-container>
                         </app-ui-content-project001>
                     </div>
@@ -120,8 +148,8 @@
                                 <ng-container *ngFor="let item of infoList; i as index">
                                     <div class="info_content_web-info">
                                         <app-ui-content-info001 [imgSrc]="item.imgSrc" [webSrc]="item.webSrc"
-                                        [textTitle]="item.textTitle" [textInfo]="item.textInfo">
-                                    </app-ui-content-info001>
+                                            [textTitle]="item.textTitle" [textInfo]="item.textInfo">
+                                        </app-ui-content-info001>
                                     </div>
                                 </ng-container>
                             </ng-container>

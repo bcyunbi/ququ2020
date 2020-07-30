@@ -11,6 +11,12 @@ export class UiSlider001Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.createConfig();
+    }, 1500)
+
+  }
+  createConfig(){
     this.config = {
       initialSlide: 0,
       direction: 'horizontal',
@@ -25,11 +31,11 @@ export class UiSlider001Component implements OnInit {
       loop: true,
       simulateTouch: true,
       autoplay: {
-        delay: 4500,
+        delay: 3000,
         disableOnInteraction: false,
       },
-      lazy: true,
-      preloadImages: false,
+      preloadImages: true,
+      updateOnImagesReady: true,
       observer: true,
       observeSlideChildren: true,
       slidesPerView: 1

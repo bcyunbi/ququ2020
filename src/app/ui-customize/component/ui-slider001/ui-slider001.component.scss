@@ -1,7 +1,18 @@
 @import 'style-import';
 @import '~swiper/dist/css/swiper.min.css';
 
-.slider-inner{
-    background-position: center;
+.ui-slider001 {
+    height: 100%;
     width: 100%;
+
+    .slider-inner {
+        // background-position: center;
+        width: 100%;
+    }
+    .swiper-pagination-bullets{
+        bottom: 20px;
+        @media (max-width:$screen-pad) {
+            bottom: 10px;
+        }
+    }
 }
