@@ -2,13 +2,12 @@
 $nav-width:10%;
 $menu-link-width:40px;
 $menu-link-padding:10px;
-// * {
-// 	box-sizing: border-box;
-// }
 
 body {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+	// height: calc(var(--vh, 1vh) * 100);
+	// max-height: 80vh;
 	background: $color-main;
 	place-items: center;
 	overflow: hidden;
@@ -21,6 +20,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin: 0 auto;
 
 	&_card {
 		position: relative;
@@ -43,7 +43,7 @@ body {
 			box-shadow: 0 10px 55px rgba(0, 0, 0, 0.15);
 			border-radius: $card-radius;
 			@include transitionfix();
-			background-position: 20rem;
+			// background-position: 20rem;
 		}
 
 		&[data-resume="ravioli"] {

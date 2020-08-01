@@ -15,11 +15,8 @@
     // }
 
     &_card {
-        // height: 100%;
         width: 100%;
         flex: 1;
-        // max-height: 50px;
-        // border-top: 1px solid $color-grey-01;
 
         .card_content {
             width: 100%;
@@ -29,7 +26,7 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            // opacity: 0; //動畫效果
+            cursor: pointer;
             border-top: 1px solid $color-brown-01;
 
             .content_title {

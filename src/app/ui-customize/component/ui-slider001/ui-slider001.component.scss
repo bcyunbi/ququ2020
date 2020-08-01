@@ -18,7 +18,8 @@
         background-image: url(../../../../assets/img/next.svg);
     }
     .swiper-button-prev , .swiper-button-next{
-        @media (max-width:$screen-sm-than-pad) {
+        outline: none;
+        @media (max-width:$screen-sm-than-desktop) {
             display: none;
         }
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 @Component({
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   @ViewChild('cardScroll', { static: false }) cardScroll: ElementRef;
+  // public vh = window.innerHeight * 0.01;
   tableImg: Observable<any[]>;
   mobileImg: Observable<any[]>;
   skhTableImg: Observable<any[]>;
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.skhMobileImg = db.collection('skhMobile').valueChanges();
   }
   public isClickMenu: boolean = false;
-  public menuChars = ['M', 'e', 'n', 'u']
+  public menuChars = ['M', 'E', 'N', 'U']
   public menuList = ['簡歷', '保險專員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集']
   public infoList = [
     {
@@ -42,6 +43,18 @@ export class HomeComponent implements OnInit {
   ]
 
   ngOnInit() {
+    this.windowSize();
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.windowSize();
+  }
+  windowSize(){
+    // let vh = window.innerHeight * 0.01;
+    // document.body.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty('--vh', window.innerHeight/100 + 'px');
+    document.body.style.height = window.innerHeight + "px";
+    // console.log("vh",vh);
   }
   handleMenu() {
     this.isClickMenu = !this.isClickMenu;
