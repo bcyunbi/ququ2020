@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>QuYun｜ Front-end
+  </title>
+  <base href="./">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+      /*處理分享到 Line 的連結*/
+      $("a").each(function () {
+        var href = this.href;
+
+        // http 網址才處理
+        if (href.indexOf("http") != 0 || href.indexOf("//") < 0) {
+          return;
+        }
+
+        // 網址沒有參數 ? 時, 直接加參數
+        if (href.indexOf("?") < 0) {
+          href += "?openExternalBrowser=1";
+        } else {
+          // 網址有參數 ? 時, 用 & 加參數
+          href += "&openExternalBrowser=1";
+        }
+        this.href = href;
+      });
+    });
+    //]]>
+  </script>
+  <app-root></app-root>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
+
+</html>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 @Component({
@@ -8,16 +8,20 @@ import { Observable } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('cardScroll', { static: false }) cardScroll: ElementRef;
   tableImg: Observable<any[]>;
   mobileImg: Observable<any[]>;
+  skhTableImg: Observable<any[]>;
+  skhMobileImg: Observable<any[]>;
   constructor(db: AngularFirestore) {
     this.tableImg = db.collection('tableImg').valueChanges();
     this.mobileImg = db.collection('mobileImg').valueChanges();
-    console.log("kk", this.tableImg)
+    this.skhTableImg = db.collection('skhTable').valueChanges();
+    this.skhMobileImg = db.collection('skhMobile').valueChanges();
   }
   public isClickMenu: boolean = false;
   public menuChars = ['M', 'e', 'n', 'u']
-  public menuList = ['簡歷', '保險業務員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集']
+  public menuList = ['簡歷', '保險專員系統', '醫院掛號系統', '銀行業官網維護', '大學線上作品集']
   public infoList = [
     {
       'imgSrc': 'assets/img/fixweb001.png',
@@ -36,33 +40,17 @@ export class HomeComponent implements OnInit {
       'textInfo': ' 修改＆新增功能'
     },
   ]
-  public bannerList = [
-    {
-      "img": "assets/img/img01.jpg"
-    },
-    {
-      "img": "assets/img/img02.jpg"
-    },
-    {
-      "img": "assets/img/img03.jpg"
-    },
-    {
-      "img": "assets/img/img04.jpg"
-    }
-  ];
-  ngOnInit() {
 
+  ngOnInit() {
   }
   handleMenu() {
     this.isClickMenu = !this.isClickMenu;
   }
   public currentPage: number = 0;
+
   clickMenuCard(index) {
     this.currentPage = index;
-    console.log("home say:", this.currentPage)
     this.isClickMenu = false;
+     this.cardScroll.nativeElement.scrollTo(0, 0);
   }
-  // onAnimationEvent(event: AnimationEvent) {
-  //   console.log({ event.toState });
-  // }
 }

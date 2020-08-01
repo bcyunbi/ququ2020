@@ -8,7 +8,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow: auto;
-    padding-bottom:150px;//advoid safari bar hide element
+    padding-bottom: 150px; //advoid safari bar hide element
 
     // &.active {
     //         background-color: $color-white;
@@ -30,6 +30,7 @@
             justify-content: flex-start;
             align-items: center;
             // opacity: 0; //動畫效果
+            border-top: 1px solid $color-brown-01;
 
             .content_title {
                 width: 100%;
@@ -37,10 +38,18 @@
                 display: flex;
                 align-items: center;
                 justify-items: flex-start;
-                // opacity: 1;
+                color: $color-brown-01;
+                padding-left: 10px;
+                letter-spacing: $font-space-sub;
+                font-size: $font-size-h6;
                 @extend .word-limit-lineType;
                 -webkit-line-clamp: 1;
-                border-top: 1px solid $color-grey-01;
+            }
+        }
+
+        &:first-child {
+            .card_content {
+                border-top: none;
             }
         }
     }

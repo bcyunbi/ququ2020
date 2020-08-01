@@ -1,6 +1,5 @@
 <div class="homePage">
-    <div class="homePage_card" data-resume="spaghetti">
-
+    <div class="homePage_card">
         <div class="card_menu ">
             <div class="menu_ui-nav001" (click)="handleMenu()">
                 <app-ui-nav001 [isClickMenu]="isClickMenu" [menuChars]="menuChars"></app-ui-nav001>
@@ -11,42 +10,66 @@
             </div>
         </div>
 
-        <div class="card_resume">
-            <!-- <img class="resume__background"
-                    src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/pasta-spaghetti.png" /> -->
+        <div class="card_resume" #cardScroll>
             <ng-container *ngIf="currentPage == 0">
                 <div class="resume_info">
                     <div class="info_title">
                         <app-ui-title001 [mainTitle]="menuList[0]" [subTitle]="'About me'"></app-ui-title001>
                     </div>
                     <div class="info_content">
+                        <div class="info_content_introduce">
+                            <div class="introduce_pic">
+                                <div class="pic_text-top">Hello,</div>
+                                <div class="pic_image-size">
+                                    <img class="image-size_img" src="assets/img/ququ.jpeg">
+                                </div>
+                                <div class="pic_text-bottom">我是曲蕓，<br/>目前朝向網頁前端領域發展，喜歡網站動態特效、製作共用性模組化元件，同時也想了解更多前端串接技巧。</div>
+                                <div class="pic_link">
+                                    <div class="link_block">
+                                        <a href="https://github.com/bcyunbi" target="_blank"
+                                            rel="noreferrer noopener"><img src="assets/img/github.svg">
+                                        </a>
+                                    </div>
+                                    <div class="link_block">
+                                        <a href="https://www.facebook.com/qu.yunbi" target="_blank"
+                                            rel="noreferrer noopener"><img class="link_block_img" src="assets/img/facebook.svg">
+                                        </a>
+                                    </div>
 
-                        <div class="">
-                            Hi, 我是曲蕓
+                                </div>
+                            </div>
+                            <div class="introduce_content">
+                                <ul class="layout-list-normal001">
+                                    <p class="layout-list-title001">經歷：</p>
+                                    <li class="layout-list-normal001_child">元智資傳環控物連網計畫、《基於圖形識別之低成本快速整理紙筆測驗批改方法》論文</li>
+                                    <li class="layout-list-normal001_child">臺師大「英語線上學習平臺建置開發及課程推廣計畫」－研發人員|
+                                        2017.05-2018.04
+                                    </li>
+                                    <li class="layout-list-normal001_child">吉樂健康資訊科技有限公司－前端實習生 |
+                                        2018.04-2019.03
+                                    </li>
+                                    <li class="layout-list-normal001_child">新逸資訊科技有限公司－前台工程師 | 2019.07-2020.03</li>
+                                </ul>
+                                <ul class="layout-list-normal001">
+                                    <p class="layout-list-title001">技術：</p>
+                                    <li class="layout-list-normal001_child">框架開發：Angular、React</li>
+                                    <li class="layout-list-normal001_child">Css 預處理器：Scss、Less</li>
+                                    <li class="layout-list-normal001_child">UI / UX：Adobe XD、PS、AI</li>
+                                    <li class="layout-list-normal001_child">jQuery、Html5、bootstrap</li>
+                                    <li class="layout-list-normal001_child">其他：Unity C#、3Ds Max</li>
+                                    <li class="layout-list-normal001_child">TOEIC：745</li>
+                                </ul>
+                                <ul class="layout-list-normal001">
+                                    <p class="layout-list-title001">學歷：</p>
+                                    <li class="layout-list-normal001_child">Yuan Ze University Information Communication
+                                        |
+                                        2015-2019</li>
+                                    <li class="layout-list-normal001_child">UAL: LCC-Short Course: Game Design |
+                                        2017.07-08
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <ul class="layout-list-disc001">
-                            <p>經歷：</p>
-                            <li class="layout-list-disc001_child">元智資傳環控物連網計畫、《基於圖形識別之低成本快速整理紙筆測驗批改方法》論文</li>
-                            <li class="layout-list-disc001_child"> 臺師大「英語線上學習平臺建置開發及課程推廣計畫」－研發人員| 2017.05-2018.04</li>
-                            <li class="layout-list-disc001_child">La Vida Tec. 吉樂健康資訊科技有限公司－前端實習生 | 2018.04-2019.03</li>
-                            <li class="layout-list-disc001_child">新逸資訊科技有限公司－前台工程師 | 2019.07-2020.03</li>
-                            <p>技術：</p>
-                            <li class="layout-list-disc001_child">框架開發：Angular、React</li>
-                            <li class="layout-list-disc001_child"> Css 預處理器：Scss、Less</li>
-                            <li class="layout-list-disc001_child"> UI / UX：Adobe XD、PS、AI</li>
-                            <li class="layout-list-disc001_child"> jQuery、Html5、bootstrap</li>
-                            <li class="layout-list-disc001_child">其他：Unity C#、3Ds Max</li>
-                            <li class="layout-list-disc001_child">TOEIC：745</li>
-                            <p>學歷：</p>
-                            <li class="layout-list-disc001_child">Yuan Ze University Information Communication |
-                                2015-2019</li>
-                            <li class="layout-list-disc001_child"> UAL:LCC-Short Course: Game Design | 2017.07-08</li>
-                            <p>聯絡：</p>
-                            <li class="layout-list-disc001_child"><a href="https://www.facebook.com/qu.yunbi"
-                                    target="_blank" rel="noreferrer noopener">Facebook</a></li>
-                            <li class="layout-list-disc001_child"> <a href="https://github.com/bcyunbi" target="_blank"
-                                    rel="noreferrer noopener">Github</a></li>
-                        </ul>
                     </div>
                 </div>
             </ng-container>
@@ -58,50 +81,75 @@
                     <div class="info_content">
                         <app-ui-content-project001>
                             <ng-container TextType='pointBlock'>
-                                <ul class="layout-list-disc001">
-                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
-                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
-                                </ul>
+                                <div class="layout-point-style001">以 Angular + Cordova 開發成web APP</div>
+                                <div class="layout-point-style001">此專案有六國版本，由核心core＋各國客製化版本</div>
                             </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <ul class="layout-list-disc001">
-                                    此專案有多國版本，各國版本包含：
-                                    <li class="layout-list-disc001_child">國際版（ENG) <span>此為核心core版本</span></li>
-                                    <li class="layout-list-disc001_child"> 台灣(MDO)</li>
-                                    <li class="layout-list-disc001_child"> 斯里蘭卡(LKA)</li>
-                                    <li class="layout-list-disc001_child"> 菲律賓(PH)</li>
-                                    <li class="layout-list-disc001_child"> 印尼(IN)</li>
-                                    <li class="layout-list-disc001_child">泰國(TH)</li>
+                                <div class="layout-title001">專案介紹：</div>
+                                <ul class="layout-list-circle001">
+                                    <p class="layout-list-title001">包含多國版本：</p>
+                                    <li class="layout-list-circle001_child">國際版（ENG) <span
+                                            class="layout-list-note001">此為核心core版本</span></li>
+                                    <li class="layout-list-circle001_child">台灣(MDO)</li>
+                                    <li class="layout-list-circle001_child">斯里蘭卡(LKA)</li>
+                                    <li class="layout-list-circle001_child">菲律賓(PH)</li>
+                                    <li class="layout-list-circle001_child">印尼(IN)</li>
+                                    <li class="layout-list-circle001_child">泰國(TH)</li>
+                                    <p class="layout-list-title001">使用平台：</p>
+                                    <li class="layout-list-circle001_child">Android 平板 ＆手機</li>
+                                    <li class="layout-list-circle001_child">IOS 平板 ＆手機</li>
+                                    <li class="layout-list-circle001_child">基本上皆適用於寬度1366 ～ 320尺寸</li>
                                 </ul>
-                                <span>主要負責的項目：1.台灣版的開發與客製化元件 2.核心core元件第二階段開發</span>
+                                <div class="layout-block001">
+                                    <div class="layout-title001">工作內容：</div>
+                                    <ul class="layout-list-circle001">
+                                        <p class="layout-list-title001">主要負責：</p>
+                                        <li class="layout-list-circle001_child">台灣版的開發與客製化元件
+                                            <ul class="layout-list-style001">
+                                                <li class="layout-list-style001_child">客戶管理 </li>
+                                                <li class="layout-list-style001_child">保單處理</li>
+                                                <li class="layout-list-style001_child">訊息通知</li>
+                                                <li class="layout-list-style001_child">幫助中心</li>
+                                                <li class="layout-list-style001_child">台灣版開發後期全站維護與修改</li>
+                                            </ul>
+                                        </li>
+                                        <li class="layout-list-circle001_child">核心core元件第二階段開發</li>
+                                        <p class="layout-list-title001">開發說明：</p>
+                                        <li class="layout-list-circle001_child">Angular 8.1.3框架開發</li>
+                                        <li class="layout-list-circle001_child">使用JavaScript、TypeScript、Html5等等</li>
+                                        <li class="layout-list-circle001_child">css預處理器使用Sass</li>
+                                        <li class="layout-list-circle001_child">Git版控</li>
+                                    </ul>
+                                </div>
 
-                                <div class="content_ui-slider001"  *ngIf="tableImg">
-                                    <img class="ui-slider001_device" src="assets/img/table.png">
-                                    <div class="ui-slider001_img">
-                                        <app-ui-slider001>
-                                            <div class="swiper-slide" *ngFor="let item of tableImg | async; let i = index">
+                                <div class="layout-block002 content_device">
+                                    <div class="device_table" *ngIf="tableImg">
+                                        <img class="table_device" src="assets/img/table.png">
+                                        <div class="table_img">
+                                            <app-ui-slider001>
+                                                <div class="swiper-slide"
+                                                    *ngFor="let item of tableImg | async; let i = index">
+                                                    <div class="slider-inner">
+                                                        <img src="{{item.img}}">
+                                                    </div>
+                                                </div>
+                                            </app-ui-slider001>
+                                        </div>
+                                    </div>
+                                    <div class="device_mobile" *ngIf="mobileImg">
+                                        <img class="mobile_device" src="assets/img/mobile.png">
+                                        <div class="mobile_img">
+                                            <app-ui-slider001>
+                                                <div class="swiper-slide"
+                                                    *ngFor="let item of mobileImg | async; let i = index">
                                                     <div class="slider-inner ">
                                                         <img src="{{item.img}}">
                                                     </div>
-                                            </div>
-                                        </app-ui-slider001>
+                                                </div>
+                                            </app-ui-slider001>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="content_ui-slider001"  *ngIf="mobileImg">
-                                    <img class="ui-slider001_device" src="assets/img/mobile.png">
-                                    <div class="ui-slider001_img">
-                                        <app-ui-slider001>
-                                            <div class="swiper-slide" *ngFor="let item of mobileImg | async; let i = index">
-                                                    <div class="slider-inner ">
-                                                        <img src="{{item.img}}">
-                                                    </div>
-                                            </div>
-                                        </app-ui-slider001>
-                                    </div>
-
-                                </div>
-
                             </ng-container>
                         </app-ui-content-project001>
                     </div>
@@ -115,17 +163,73 @@
                     <div class="info_content">
                         <app-ui-content-project001>
                             <ng-container TextType='pointBlock'>
-                                <ul class="layout-list-disc001">
-                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
-                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
-                                </ul>
+                                <div class="layout-point-style001">Angular與傳統切版開發、Cordova 包版 </div>
+                                <div class="layout-point-style001">根據現行醫院官網（傳統開發：不使用任何框架）進行後續開發
+                                </div>
                             </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <span>
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke PastaZesty
-                                    Tomato Artichoke Pasta</span>
+                                <div class="layout-title001">專案介紹：</div>
+                                <ul class="layout-list-circle001">
+                                    <p class="layout-list-title001">相關說明：</p>
+                                    <li class="layout-list-circle001_child">以網頁為主（但app有保留）</li>
+                                    <li class="layout-list-circle001_child">在傳統開發官網的規則下，作Angular切版改寫</li>
+                                    <p class="layout-list-title001">使用平台：</p>
+                                    <li class="layout-list-circle001_child">支援Safari、Chrome、IE 11</li>
+                                    <li class="layout-list-circle001_child">Android 平板 ＆手機、IOS 平板 ＆手機</li>
+                                    <li class="layout-list-circle001_child">基本上皆適用於解析度2560 ～ 320x自訂高度，最佳1440x768</li>
+                                </ul>
+                                <div class="layout-block001">
+                                    <div class="layout-title001">工作內容：</div>
+                                    <ul class="layout-list-circle001">
+                                        <p class="layout-list-title001">主要負責：</p>
+                                        <li class="layout-list-circle001_child">Angular切版開發與客製化元件，包含：
+                                            <ul class="layout-list-style001">
+                                                <li class="layout-list-style001_child">網路掛號初診</li>
+                                                <li class="layout-list-style001_child">老人健檢</li>
+                                                <li class="layout-list-style001_child">衛教照護資訊</li>
+                                                <li class="layout-list-style001_child">用藥查詢</li>
+                                                <li class="layout-list-style001_child">藥物反應不良線上通報</li>
+                                                <li class="layout-list-style001_child">藥物諮詢</li>
+                                                <li class="layout-list-style001_child">QA案例分享</li>
+                                                <li class="layout-list-style001_child">文件申請</li>
+                                            </ul>
+                                        </li>
+                                        <p class="layout-list-title001">開發說明：</p>
+                                        <li class="layout-list-circle001_child">Angular 8.1.3框架開發</li>
+                                        <li class="layout-list-circle001_child">使用JavaScript、TypeScript、Html5等等</li>
+                                        <li class="layout-list-circle001_child">css預處理器使用Sass</li>
+                                        <li class="layout-list-circle001_child">Git版控</li>
+                                    </ul>
+                                </div>
+
+                                <div class="layout-block002 content_device">
+                                    <div class="device_table" *ngIf="skhTableImg">
+                                        <img class="table_device" src="assets/img/table.png">
+                                        <div class="table_img">
+                                            <app-ui-slider001>
+                                                <div class="swiper-slide"
+                                                    *ngFor="let item of skhTableImg | async; let i = index">
+                                                    <div class="slider-inner">
+                                                        <img src="{{item.img}}">
+                                                    </div>
+                                                </div>
+                                            </app-ui-slider001>
+                                        </div>
+                                    </div>
+                                    <div class="device_mobile" *ngIf="skhMobileImg">
+                                        <img class="mobile_device" src="assets/img/mobile.png">
+                                        <div class="mobile_img">
+                                            <app-ui-slider001>
+                                                <div class="swiper-slide"
+                                                    *ngFor="let item of skhMobileImg | async; let i = index">
+                                                    <div class="slider-inner ">
+                                                        <img src="{{item.img}}">
+                                                    </div>
+                                                </div>
+                                            </app-ui-slider001>
+                                        </div>
+                                    </div>
+                                </div>
                             </ng-container>
                         </app-ui-content-project001>
                     </div>
@@ -138,20 +242,16 @@
                     </div>
                     <div class="info_content">
                         <app-ui-content-project001>
-                            <ng-container TextType='pointBlock'>
-                                <ul class="layout-list-disc001">
-                                    <li class="layout-list-disc001_child">以 Angular + Cordova 開發成web APP</li>
-                                    <li class="layout-list-disc001_child"> 此專案有六國版本，由核心core＋各國客製化版本</li>
-                                </ul>
-                            </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <ng-container *ngFor="let item of infoList; i as index">
-                                    <div class="info_content_web-info">
-                                        <app-ui-content-info001 [imgSrc]="item.imgSrc" [webSrc]="item.webSrc"
-                                            [textTitle]="item.textTitle" [textInfo]="item.textInfo">
-                                        </app-ui-content-info001>
-                                    </div>
-                                </ng-container>
+                                <div class="info_content_web-info">
+                                    <ng-container *ngFor="let item of infoList; i as index">
+                                        <div class="web-info_component">
+                                            <app-ui-content-info001 [imgSrc]="item.imgSrc" [webSrc]="item.webSrc"
+                                                [textTitle]="item.textTitle" [textInfo]="item.textInfo">
+                                            </app-ui-content-info001>
+                                        </div>
+                                    </ng-container>
+                                </div>
                             </ng-container>
                         </app-ui-content-project001>
                     </div>
@@ -164,18 +264,19 @@
                     </div>
                     <div class="info_content">
                         <app-ui-content-project001>
-                            <ng-container TextType='pointBlock'>
-
-                            </ng-container>
                             <ng-container TextType='infoBlock'>
-                                <iframe
-                                    src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=f7csr8ljd&bgcolor=transparent&t=1540204623&play=1"
-                                    width="100%" height="400" seamless="seamless" scrolling="no" frameBorder="0"
-                                    transparentBackground="true" allowFullScreen="false"></iframe>
-                                <iframe
-                                    src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=fx9fo5fnv&bgcolor=EEEEEE&t=1540204623&play=1"
-                                    width="100%" height="400" seamless="seamless" scrolling="no" frameBorder="0"
-                                    transparentBackground="true" allowFullScreen="false"></iframe>
+                                <div class="content-book">
+                                    <iframe
+                                        src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=f7csr8ljd&bgcolor=transparent&t=1540204623&play=1"
+                                        width="100%" height="400" seamless="seamless" scrolling="no" frameBorder="0"
+                                        transparentBackground="true" allowFullScreen="false"></iframe>
+                                </div>
+                                <div class="content-book">
+                                    <iframe
+                                        src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=fx9fo5fnv&bgcolor=EEEEEE&t=1540204623&play=1"
+                                        width="100%" height="400" seamless="seamless" scrolling="no" frameBorder="0"
+                                        transparentBackground="true" allowFullScreen="false"></iframe>
+                                </div>
                             </ng-container>
                         </app-ui-content-project001>
                     </div>

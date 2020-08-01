@@ -9,10 +9,29 @@
         // background-position: center;
         width: 100%;
     }
-    .swiper-pagination-bullets{
+
+    .swiper-button-prev {
+        background-image: url(../../../../assets/img/back.svg);
+    }
+
+    .swiper-button-next {
+        background-image: url(../../../../assets/img/next.svg);
+    }
+    .swiper-button-prev , .swiper-button-next{
+        @media (max-width:$screen-sm-than-pad) {
+            display: none;
+        }
+    }
+
+    .swiper-pagination-bullets {
         bottom: 20px;
+
         @media (max-width:$screen-pad) {
             bottom: 10px;
         }
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #4FBA6F;
     }
 }

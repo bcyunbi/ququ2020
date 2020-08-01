@@ -1,5 +1,4 @@
 @import "style-import";
-$yellow: #9ecbd3;
 $nav-width:10%;
 $menu-link-width:40px;
 $menu-link-padding:10px;
@@ -10,7 +9,7 @@ $menu-link-padding:10px;
 body {
 	width: 100%;
 	height: 100vh;
-	background: $yellow;
+	background: $color-main;
 	place-items: center;
 	overflow: hidden;
 }
@@ -29,14 +28,14 @@ body {
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-start;
-		background: $yellow;
+		background: $color-main;
 		width: 100%;
 		height: 100vh;
 		overflow: hidden;
 		background-size: cover;
 		background-position: 13rem;
 		background-repeat: no-repeat;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg transform='translate(300,300)'%3E%3Cpath d='M171.3,-205.3C215.2,-167.2,239.6,-106.9,247.9,-45.8C256.2,15.3,248.5,77.2,216.3,117.5C184.2,157.8,127.7,176.6,70.6,200.1C13.5,223.6,-44.2,251.8,-80.6,233.4C-117,215,-132.1,150,-124.8,101.6C-117.5,53.3,-87.8,21.5,-74.8,-6.5C-61.9,-34.4,-65.6,-58.6,-56,-102.7C-46.3,-146.8,-23.1,-210.9,20.2,-235C63.6,-259.2,127.3,-243.3,171.3,-205.3Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E");
+		background-image: url("../../../../assets/img/demo.svg");
 
 		@media (min-width: $screen-pad) {
 			height: 90vh;
@@ -95,58 +94,210 @@ body {
 			.resume_info {
 				padding-bottom: 100px;
 
-				.info_title {}
+				.info_title {
+					padding: 30px;
+				}
 
 				.info_content {
+					padding: 0 40px 30px;
 					width: 100%;
 					height: 100%;
+					color: $color-text;
 
-					&_web-info {
-						width: 50%;
-						display: inline-block;
-						padding: 30px;
+					&_introduce {
+						display: flex;
+						align-items: flex-start;
+						justify-content: flex-start;
+						flex-direction: row;
+						flex-wrap: wrap;
+						width: 100%;
+						height: 100%;
+
+						.introduce_pic {
+							padding-top: 20px;
+							padding-right: 20px;
+							position: relative;
+							max-width: 30%;
+							width: 100%;
+
+							@media (max-width:$screen-sm-than-pad) {
+								max-width: 100%;
+							}
+
+							.pic_text-top {
+								font-size: 50px;
+								position: absolute;
+								top: -10px;
+								color: $color-green-01;
+
+								&:before {
+									content: "Hello,";
+									font-size: 50px;
+									position: absolute;
+									left: -3px;
+									top: -3px;
+									color: $color-white;
+								}
+							}
+
+							.pic_text-bottom {
+								font-size: $font-size-h8;
+								color: $color-white;
+								margin:10px 0 20px;
+							}
+
+							.pic_image-size {
+								width: 100%;
+								height: auto;
+								border-radius: $card-radius;
+								overflow: hidden;
+
+								.image-size_img {
+									width: 100%;
+								}
+							}
+
+							.pic_link {
+								width: 100%;
+
+								.link_block {
+									display: inline-block;
+									max-width: 40px;
+									width: 100%;
+									height: auto;
+									padding-right: 10px;
+
+									&_img {
+										width: 100%;
+									}
+								}
+							}
+						}
+
+						.introduce_content {
+							max-width: calc(100% - 30% - 40px);
+							width: 100%;
+
+							@media (max-width:$screen-sm-than-pad) {
+								max-width: 100%;
+							}
+						}
 
 					}
 
-					.content_ui-slider001 {
-						width: 60%;
-						height: auto;
-						position: relative;
 
-						@media (max-width:$screen-pad) {
-							width: 100%;
-						}
+					&_web-info {
+						display: flex;
+						width: 100%;
+						flex-wrap: wrap;
+						justify-content: flex-start;
+						align-items: stretch;
 
-						.ui-slider001_device {
-							width: 100%;
-							height: 100%;
-							position: absolute;
-							top: 0;
-							overflow: hidden;
-							pointer-events: none;
-							z-index: 2;
-						}
-
-						.ui-slider001_img {
-							width: 100%;
-							height: 100%;
-							padding: 4% 9% 3%;
-							z-index: 1;
-
-							img {
+						.web-info_component {
+							width: 50%;
+							display: inline-block;
+							padding: 30px;
+							@media (max-width:$screen-sm-than-pad) {
 								width: 100%;
+								padding: 10px;
+							}
+						}
+
+
+					}
+
+					.content_device {
+						width: 100%;
+						height: 100%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex-flow: wrap;
+						flex-direction: row;
+
+						.device_table {
+							width: 60%;
+							height: auto;
+							position: relative;
+							margin-right: 80px;
+
+							@media (max-width:$screen-pad) {
+								width: 100%;
+								margin: 0px 0px 50px;
+							}
+
+							.table_device {
+								width: 100%;
+								height: 100%;
+								position: absolute;
+								top: 0;
+								overflow: hidden;
+								pointer-events: none;
+								z-index: 2;
+								min-height: 15vw;
+
+								@media (min-width:$screen-lg-pad) {
+									min-height: 30vw;
+								}
+							}
+
+							.table_img {
+								width: 100%;
+								height: 100%;
+								padding: 4% 9% 3%;
+								z-index: 1;
+
+								img {
+									width: 100%;
+								}
+							}
+
+						}
+
+						.device_mobile {
+							width: calc(27% - 80px);
+							height: auto;
+							position: relative;
+
+							@media (max-width:$screen-pad) {
+								width: 70%;
+							}
+
+							.mobile_device {
+								width: 100%;
+								height: 100%;
+								position: absolute;
+								top: 0;
+								overflow: hidden;
+								pointer-events: none;
+								z-index: 2;
+							}
+
+							.mobile_img {
+								width: 100%;
+								height: auto;
+								padding: 28% 6%;
+								z-index: 1;
+
+								img {
+									width: 100%;
+									height: 100%;
+								}
 							}
 
 							.slider-inner {
 								height: 100%;
 								width: 100%;
-								background-color: $color-black;
+								background-color: $color-bg-mdo;
 							}
 						}
+					}
 
+					.content-book {
+						width: 80%;
+						margin: 0 auto;
 					}
 				}
-
 			}
 		}
 

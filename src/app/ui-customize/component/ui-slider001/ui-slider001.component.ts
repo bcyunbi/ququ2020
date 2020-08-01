@@ -16,6 +16,8 @@ export class UiSlider001Component implements OnInit {
     }, 1500)
 
   }
+
+  
   createConfig(){
     this.config = {
       initialSlide: 0,
