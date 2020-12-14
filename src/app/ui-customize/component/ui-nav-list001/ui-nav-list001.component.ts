@@ -66,7 +66,7 @@ export class UiNavList001Component implements OnInit {
   ngOnInit() {
   }
   clickMenuCard(i) {
-    console.log('component say:',i)
+    // console.log('component say:',i)
     this.clickMenuPage.emit(i);
   }
 }

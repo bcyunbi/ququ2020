@@ -29,6 +29,6 @@ export class UiNav001Component implements OnInit {
   ngOnInit() {
   }
   handelHambuger() {
-    console.log("ClickMenu", this._isClickMenu)
+    // console.log("ClickMenu", this._isClickMenu)
   }
 }
